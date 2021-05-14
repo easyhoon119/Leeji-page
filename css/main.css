@@ -160,3 +160,54 @@ footer > .inner {
   align-items: center;
   border-bottom: none;
 }
+
+@media screen and (max-width: 480px) {
+  /* header */
+  header > .inner {
+    height: 170px;
+  }
+
+  .nav_bar > i {
+    font-size: 25px;
+  }
+
+  .title {
+    font-size: 50px;
+  }
+
+  .my_face {
+    width: 35px;
+    height: 35px;
+    top: 17%;
+    left: 15%;
+  }
+
+  .button_group {
+    padding-top: 20px;
+    width: 75%;
+  }
+
+  .button {
+    width: 65px;
+    height: 50px;
+    font-size: 15px;
+  }
+
+  .clock {
+    font-size: 15px;
+    top: 5%;
+    left: 75%;
+  }
+
+  /* main */
+  .article_container {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  /* footer */
+  footer > .inner {
+    height: 160px;
+    font-size: 15px;
+  }
+}
