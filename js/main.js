@@ -24,4 +24,8 @@ window.onload = function () {
     button1.addEventListener('click', function () {
         window.location.href = './my_project1.html';
     });
+
+    button2.addEventListener('click', function () {
+        window.location.href = "./Api-project1.html";
+    });
 };

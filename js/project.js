@@ -26,9 +26,6 @@ window.onload = function () {
     var blossom = document.querySelector('.blossom');
     var predict_face = document.querySelector('.predict_face');
     var pygame = document.querySelector('.pygame');
-    blossom.style.display = 'none';
-    predict_face.style.display = 'none';
-    pygame.style.display = 'none';
 
     button4.addEventListener('click', function () {
         predict_face.style.display = 'none';

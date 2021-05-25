@@ -26,6 +26,7 @@ body {
   background-color: #333;
   margin: 0 auto;
   border-bottom: 2px solid whitesmoke;
+  box-shadow: 0px 0px 15px white;
 }
 
 /* HEADER */
@@ -138,6 +139,22 @@ article:nth-child(3) {
   margin: 0 auto;
 }
 
+.aaa:link {
+  color: whitesmoke;
+}
+
+.aaa:visited {
+  color: whitesmoke;
+}
+
+.aaa:active {
+  color: whitesmoke;
+}
+
+.aaa:hover {
+  color: burlywood;
+}
+
 .article_container > h1 {
   margin-bottom: 10px;
 }
@@ -148,6 +165,104 @@ li {
 
 li > a {
   text-decoration: none;
+}
+
+/* Main in my_project */
+.blossom {
+  display: none;
+}
+
+.predict_face {
+  display: none;
+}
+
+.pygame {
+  display: none;
+}
+
+/* Main in Api-project */
+.project-inner {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.map_api-container {
+  display: none;
+}
+
+.map-container {
+  width: 100%;
+  height: 300px;
+  text-align: center;
+  font-size: 35px;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid gray;
+}
+
+.map-container > h1 {
+  margin-bottom: 8px;
+}
+
+#map1 {
+  height: 250px;
+  width: 450px;
+  margin: 0 auto;
+}
+
+#map2 {
+  height: 250px;
+  width: 450px;
+  margin: 0 auto;
+}
+
+#map3 {
+  height: 250px;
+  width: 450px;
+  margin: 0 auto;
+}
+
+.teacherbleMachine-container {
+  display: none;
+  width: 450px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 25px;
+}
+
+.t-title {
+  font-size: 35px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.fighting {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+}
+
+.fighting > ul {
+  margin-top: 5px;
+}
+
+.others-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.address {
+  width: 100%;
+  height: 300px;
+  border-bottom: 1px solid whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /* FOOTER */
@@ -194,12 +309,16 @@ footer > .inner {
   }
 
   .clock {
-    font-size: 15px;
+    font-size: 13px;
     top: 5%;
-    left: 75%;
+    left: 78%;
   }
 
   /* main */
+  .main > .inner {
+    height: 490px;
+  }
+
   .article_container {
     padding: 10px;
     font-size: 15px;
