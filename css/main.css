@@ -18,15 +18,15 @@ body {
 .section {
   width: 100%;
   height: auto;
-  background-color: #7f7f7f;
+  background-color: rgb(227, 226, 226);
 }
 
 .inner {
   width: 95%;
-  background-color: #333;
+  background-color: grey;
   margin: 0 auto;
-  border-bottom: 2px solid whitesmoke;
-  box-shadow: 0px 0px 15px white;
+  border-bottom: 1px solid whitesmoke;
+  box-shadow: 0px 0px 8px #333;
 }
 
 /* HEADER */
@@ -90,9 +90,9 @@ header > .inner {
   background-color: greenyellow;
   width: 100px;
   height: 60px;
-  border: 1px solid gray;
+  border: 1px solid whitesmoke;
   border-radius: 8px;
-  box-shadow: 3px 3px 3px 3px gray;
+  box-shadow: 3px 3px 3px 3px whitesmoke;
   transition: 0.5s;
   display: flex;
   color: #333;
@@ -187,6 +187,30 @@ li > a {
   position: relative;
 }
 
+.explain {
+  padding-top: 35px;
+  width: 100%;
+}
+
+.explain > span {
+  display: block;
+  width: 85%;
+  text-align: center;
+  font-size: 30px;
+  margin: 0 auto;
+  margin-bottom: 45px;
+}
+
+.explain > ol {
+  width: 61%;
+  font-size: 25px;
+  margin: 0 auto;
+}
+
+.explain > ol {
+  list-style: square;
+}
+
 .map_api-container {
   display: none;
 }
@@ -253,6 +277,7 @@ li > a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
 }
 
 .address {
@@ -263,6 +288,30 @@ li > a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  font-size: 35px;
+}
+
+.address > h1 {
+  margin-bottom: 5px;
+}
+
+.address > input {
+  margin-bottom: 5px;
+  border-radius: 7px;
+  font-size: 24px;
+}
+
+.advertise {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 35px;
+}
+
+.advertise > h1 {
+  margin-bottom: 5px;
 }
 
 /* FOOTER */

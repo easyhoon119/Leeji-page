@@ -16,15 +16,24 @@ window.onload = function () {
         window.location.href = './index.html';
     });
 
+    //타이틀 클릭시 reload
+    var title = document.querySelector('.title');
+
+    title.addEventListener('click', function () {
+        window.location.reload();
+    });
+
     // 맵 api
     var map_api = document.querySelector('.map_api-container');
     var techerable = document.querySelector('.teacherbleMachine-container');
     var others = document.querySelector('.others-container');
+    var explain = document.querySelector('.explain');
 
     button4.addEventListener('click', function () {
         map_api.style.display = 'block';
         techerable.style.display = 'none';
         others.style.display = 'none';
+        explain.style.display = 'none';
         button4.style.backgroundColor = 'grey';
         button5.style.backgroundColor = 'greenyellow';
         button6.style.backgroundColor = 'greenyellow';
@@ -34,6 +43,7 @@ window.onload = function () {
         techerable.style.display = 'block';
         map_api.style.display = 'none';
         others.style.display = 'none';
+        explain.style.display = 'none';
         button5.style.backgroundColor = 'grey';
         button4.style.backgroundColor = 'greenyellow';
         button6.style.backgroundColor = 'greenyellow';
@@ -43,6 +53,7 @@ window.onload = function () {
         others.style.display = 'block';
         techerable.style.display = 'none';
         map_api.style.display = 'none';
+        explain.style.display = 'none';
         button6.style.backgroundColor = 'grey';
         button5.style.backgroundColor = 'greenyellow';
         button4.style.backgroundColor = 'greenyellow';
