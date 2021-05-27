@@ -368,6 +368,25 @@ li > a {
   margin: 0 auto;
 }
 
+.weather-container {
+  padding-top: 10px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-size: 30px;
+  display: none;
+  text-align: center;
+}
+
+.weather-container2 {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* FOOTER */
 footer > .inner {
   height: 120px;
