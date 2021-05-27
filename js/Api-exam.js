@@ -37,6 +37,24 @@ window.onload = function () {
         button4.style.backgroundColor = 'grey';
         button5.style.backgroundColor = 'greenyellow';
         button6.style.backgroundColor = 'greenyellow';
+        var containers = document.getElementById('map2'); //지도를 담을 영역의 DOM 레퍼런스
+        var options = { //지도를 생성할 때 필요한 기본 옵션
+            center: new kakao.maps.LatLng(37.223293, 127.187169), //지도의 중심좌표.
+            level: 6, //지도의 레벨(확대, 축소 정도)
+            scrollwheel: false
+        };
+
+        var map = new kakao.maps.Map(containers, options); //지도 생성 및 객체 리턴
+
+
+        // 마커가 표시될 위치입니다 
+        var markerPosition = new kakao.maps.LatLng(37.223293, 127.187169);
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            position: markerPosition,
+            map: map
+        });
     });
 
     button5.addEventListener('click', function () {

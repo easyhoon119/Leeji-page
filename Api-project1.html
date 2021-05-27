@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -107,7 +108,7 @@
                     </div>
                     <div class="map-container">
                         <h1>Kakao Map</h1>
-                        <div id="map2"></div>
+                        <div id="map2" style="width: 450px; height: 250px;"></div>
                     </div>
                     <div class="map-container">
                         <h1>Naver Map</h1>
@@ -123,9 +124,9 @@
                     <div class="fighting">
                         뒤로 물러나 주세요
                         <ul>
-                            <li>위로 스트레칭 : </li>
-                            <li>왼쪽으로 스트레칭 : </li>
-                            <li>오른쪽으로 스트레칭 : </li>
+                            <li class="stretch">위로 스트레칭 : </li>
+                            <li class="stretch">왼쪽으로 스트레칭 : </li>
+                            <li class="stretch">오른쪽으로 스트레칭 : </li>
                         </ul>
                     </div>
                 </div>
@@ -168,6 +169,8 @@
     <script type="text/javascript"
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=345dd80f79497321963a1a974d52c088"></script>
     <script>
+        
+    
         var containers = document.getElementById('map2'); //지도를 담을 영역의 DOM 레퍼런스
         var options = { //지도를 생성할 때 필요한 기본 옵션
             center: new kakao.maps.LatLng(37.223293, 127.187169), //지도의 중심좌표.
@@ -176,7 +179,8 @@
         };
 
         var map = new kakao.maps.Map(containers, options); //지도 생성 및 객체 리턴
-
+        
+        
         // 마커가 표시될 위치입니다 
         var markerPosition = new kakao.maps.LatLng(37.223293, 127.187169);
 
@@ -206,33 +210,33 @@
     <script type="text/javascript">
         // More API functions here:
         // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
-
+    
         // the link to your model provided by Teachable Machine export panel
-        const URL = "https://teachablemachine.withgoogle.com/models/LTf7vuJ_s/";
+        const URL = "https://teachablemachine.withgoogle.com/models/I_iC4syxB/";
         let model, webcam, ctx, labelContainer, maxPredictions;
 
         function quit() {
             window.location.reload();
         }
-
+    
         async function init() {
             const modelURL = URL + "model.json";
             const metadataURL = URL + "metadata.json";
-
+    
             // load the model and metadata
             // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
             // Note: the pose library adds a tmPose object to your window (window.tmPose)
             model = await tmPose.load(modelURL, metadataURL);
             maxPredictions = model.getTotalClasses();
-
+    
             // Convenience function to setup a webcam
-            const size = 280;
+            const size = 200;
             const flip = true; // whether to flip the webcam
             webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
             await webcam.setup(); // request access to the webcam
             await webcam.play();
             window.requestAnimationFrame(loop);
-
+    
             // append/get elements to the DOM
             const canvas = document.getElementById("canvas");
             canvas.width = size; canvas.height = size;
@@ -242,18 +246,18 @@
                 labelContainer.appendChild(document.createElement("div"));
             }
         }
-
+    
         async function loop(timestamp) {
             webcam.update(); // update the webcam frame
             await predict();
             window.requestAnimationFrame(loop);
         }
-
+        
         var status = 'stand';
-        var up_index = 0
-        var left_index = 0
-        var right_index = 0
-
+        var up_index = 0;
+        var left_index = 0;
+        var right_index = 0;
+    
         async function predict() {
             // Prediction #1: run input through posenet
             // estimatePose can take in an image, video or canvas html element
@@ -261,7 +265,7 @@
             // Prediction 2: run input through teachable machine classification model
             const prediction = await model.predict(posenetOutput);
 
-            var count_stretch = document.querySelectorAll('li')
+            var count_stretch = document.querySelectorAll('.stretch');
 
             if (prediction[0].probability.toFixed(2) == 1) {
                 if (status == 'stand') up_index += 1;
@@ -285,18 +289,17 @@
             count_stretch[0].innerHTML = '위로 스트레칭 : ' + up_index;
             count_stretch[1].innerHTML = '왼쪽으로 스트레칭 : ' + left_index;
             count_stretch[2].innerHTML = '오른쪽으로 스트레칭 : ' + right_index;
-
-
+    
             for (let i = 0; i < maxPredictions; i++) {
                 const classPrediction =
                     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
                 labelContainer.childNodes[i].innerHTML = classPrediction;
             }
-
+    
             // finally draw the poses
             drawPose(pose);
         }
-
+    
         function drawPose(pose) {
             if (webcam.canvas) {
                 ctx.drawImage(webcam.canvas, 0, 0);

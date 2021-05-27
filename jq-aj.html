@@ -50,11 +50,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <script>
-        $(document).ready(function(){
-            //슬라이더 구현
-            $('.slider').bxSlider();
+        $(document).ready(function () {
+            // //슬라이더 구현
+            // $('.slider').bxSlider({
+            //     minSlides: 1,
+			// 	maxSlides: 3,
+            //     preloadImages: 'all'
+            // });
             //토글버튼 구현
-            $('#toggle_btn').click(function(){
+            $('#toggle_btn').click(function () {
                 $('.inner').toggleClass('lightmode');
                 $('#toggle_btn').toggleClass('lightmode2');
             });
@@ -81,17 +85,41 @@
         </header>
         <div class="main section">
             <div class="inner">
+                <div class="explain">
+                    <span>
+                        JQuery와 Ajax를 공부하고 응용해본 페이지입니다.<br />
+                        현재는 몇가지 예시 밖에 없지만 접차 늘려나갈 생각입니다.<br />
+                    </span>
+                    <ol>
+                        <li>Slider : Jquery의 bxSlider 라이브러리를 이용하여 배너 제작</li>
+                        <li>Toggle : Jquery의 .toggle 메쏘드를 이용하여 다크모드, 라이트모드 구현</li>
+                        <li>spreadSheet : Jquery와 Ajax를 이용해 구글 스프레드시트로 데이터를 보내고 Api를 이용해 값을 display 하였습니다.</li>
+                        <li>weather : Jquery와 Ajax를 이용하여 날씨 Api 구현하였습니다.</li>
+                    </ol>
+                </div>
                 <div class="slider-container">
                     <h1>BxSlider</h1>
                     <div class="slider">
-                        <img src="./sl1.jpeg" alt="sl1"  style="height: 360px;">
-                        <img src="./sl2.jpeg" alt="sl2"  style="height: 360px;">
-                        <img src="./sl3.jpeg" alt="sl3"  style="height: 360px;">
-                        <img src="./sl4.jpeg" alt="sl4"  style="height: 360px;">
+                        <img src="./sl1.jpeg" alt="sl1" style="height: 360px;">
+                        <img src="./sl2.jpeg" alt="sl2" style="height: 360px;">
+                        <img src="./sl3.jpeg" alt="sl3" style="height: 360px;">
+                        <img src="./sl4.jpeg" alt="sl4" style="height: 360px;">
                     </div>
                 </div>
                 <div class="toggle-container">
                     <div class="button" id="toggle_btn">라이트모드로 보기</div>
+                </div>
+                <div class="spreadSheet-container">
+                    <div class="input_field">
+                        <h1>데이터를 입력하세요</h1>
+                        <input type="text" placeholder="이름" class="spread_name">
+                        <textarea name="intro" id="intro" cols="30" rows="10" placeholder="자유롭게 작성해주세요"></textarea>
+                        <div class="button" id="spreadSubmit">전송</div>
+                    </div>
+                    <div class="output_field">
+                        <h1>입력 후 5분 뒤에 반영됩니다.</h1>
+                        <iframe class="score"src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT87WW1-3kEa1qiWkOZY6VQbvM1oENYmkk2ff4xji7lDrtSN1cy7tZKQMl422dwLOUmOMps8Rheec6m/pubhtml?gid=0&amp;single=true&amp;widget=false&amp;headers=false&amp;range=A1:B7&amp;chrome=false"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
