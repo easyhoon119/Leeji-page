@@ -18,18 +18,18 @@ window.onload = function () {
     var home = document.querySelector('.fa-home');
 
     home.addEventListener('click', function () {
-        window.location.href = 'http://classnet.mju.ac.kr/~s60161893/interpro_project/index.html';
+        window.location.href = 'index.html';
     });
 
     button1.addEventListener('click', function () {
-        window.location.href = 'http://classnet.mju.ac.kr/~s60161893/interpro_project/my_project1.html';
+        window.location.href = 'my_project1.html';
     });
 
     button2.addEventListener('click', function () {
-        window.location.href = "http://classnet.mju.ac.kr/~s60161893/interpro_project/Api-project1.html";
+        window.location.href = "Api-project1.html";
     });
 
     button3.addEventListener('click', function () {
-        window.location.href = 'http://classnet.mju.ac.kr/~s60161893/interpro_project/jq-aj.html';
+        window.location.href = 'jq-aj.html';
     });
 };

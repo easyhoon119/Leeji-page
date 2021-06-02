@@ -13,7 +13,7 @@ window.onload = function () {
     var button6 = document.querySelector('#button3');
 
     home.addEventListener('click', function () {
-        window.location.href = 'http://classnet.mju.ac.kr/~s60161893/interpro_project/index.html';
+        window.location.href = 'index.html';
     });
 
     //타이틀 클릭시 reload
