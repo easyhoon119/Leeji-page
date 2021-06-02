@@ -18,7 +18,7 @@ window.onload = function () {
     var home = document.querySelector('.fa-home');
 
     home.addEventListener('click', function () {
-        window.location.href = './index.html';
+        window.location.href = 'http://classnet.mju.ac.kr/~s60161893/interpro_project/index.html';
     });
 
     button1.addEventListener('click', function () {
